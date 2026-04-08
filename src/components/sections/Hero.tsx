@@ -6,15 +6,18 @@ import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background photo */}
-      <Image
-        src="/images/apero_fete_village.jpg"
-        alt="Fête du village à Puyricard"
-        fill
-        className="object-cover"
-        priority
-      />
+      <div className="absolute inset-0 left-1/2 w-screen -translate-x-1/2">
+        <Image
+          src="/images/apero_fete_village.jpg"
+          alt="Fête du village à Puyricard"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority
+        />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/15" />
 
       {/* Bunting decoration (SVG inspired by logo) */}
