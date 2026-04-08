@@ -4,10 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { association } from "@/data/association";
-import { partners } from "@/data/partners";
-import { socialLinks } from "@/data/navigation";
 
 export function AssociationPage() {
   return (
@@ -124,60 +121,8 @@ export function AssociationPage() {
         </div>
       </section>
 
-      {/* Partners */}
-      <section id="partenaires" className="py-16 md:py-24 px-4 bg-sable scroll-mt-24">
-        <div className="max-w-7xl mx-auto">
-          <SectionTitle
-            title="Nos partenaires"
-            subtitle="Les commerçants et producteurs qui font vivre le plateau"
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {partners.map((partner, i) => (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="w-14 h-14 rounded-full bg-corail/10 flex items-center justify-center mb-4">
-                  <span className="font-heading text-xl font-bold text-corail">
-                    {partner.name.charAt(0)}
-                  </span>
-                </div>
-                <h3 className="font-heading text-base font-bold mb-1">{partner.name}</h3>
-                <p className="text-sm text-corail font-medium mb-2">{partner.activity}</p>
-                {partner.description && (
-                  <p className="text-sm text-encre-light">{partner.description}</p>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Partners section intentionally hidden (content pending) */}
 
-      {/* CTA */}
-      <section className="py-16 md:py-20 px-4 bg-encre">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
-              Rejoignez-nous !
-            </h2>
-            <p className="text-lg text-white/70 mb-8">
-              Adhérez à l&apos;association et participez à la vie du village.
-            </p>
-            <Button href={socialLinks.helloasso} size="lg" external>
-              Adhérer sur HelloAsso
-            </Button>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }

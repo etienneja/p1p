@@ -19,5 +19,3 @@ export const galleryImages: GalleryImage[] = [
   { src: "/images/team1.jpeg", alt: "L'équipe P1P lors de la fête votive", event: "Fête Votive", width: 1200, height: 900 },
   { src: "/images/team2.jpeg", alt: "L'équipe P1P en action", event: "Fête du Village", width: 1200, height: 900 },
 ];
-
-export const eventFilters = ["Tous", "Fête Votive", "Cinéma en Plein Air", "Fête du Village"];

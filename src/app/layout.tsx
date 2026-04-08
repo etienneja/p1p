@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       "Donner vie au village, ensemble. Événements conviviaux au cœur de Puyricard.",
     type: "website",
     locale: "fr_FR",
-    images: [{ url: "/images/logo.jpeg", width: 548, height: 427, alt: "Logo Puyricard sur un Plateau" }],
+    images: [{ url: "/images/logo_p1p.png", width: 548, height: 427, alt: "Logo Puyricard sur un Plateau" }],
   },
 };
 

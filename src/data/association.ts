@@ -31,6 +31,6 @@ export const association = {
       icon: "users" as const,
     },
   ],
-  email: "contact@puyricardsur1plateau.fr",
-  address: "Puyricard, 13540 Aix-en-Provence",
+  email: "contact@puyricardsurunplateau.org",
+  address: "av de la Touloubre, 13540 Puyricard",
 };

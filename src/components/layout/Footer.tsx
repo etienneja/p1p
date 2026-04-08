@@ -27,16 +27,15 @@ export function Footer() {
           {/* Logo & description */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <Image
-                src="/images/logo.jpeg"
-                alt="P1P"
-                width={48}
-                height={37}
-                className="h-10 w-auto rounded"
-              />
-              <span className="font-heading text-xl font-bold">
-                P<span className="text-corail">1</span>P
-              </span>
+              <div className="bg-white rounded-md px-2 py-1 shadow-sm ring-1 ring-black/10 inline-flex">
+                <Image
+                  src="/images/logo_p1p.png"
+                  alt="Puyricard sur un Plateau"
+                  width={120}
+                  height={93}
+                  className="h-12 w-auto"
+                />
+              </div>
             </div>
             <p className="text-cream/70 text-sm leading-relaxed">
               {association.description}
@@ -65,12 +64,6 @@ export function Footer() {
             <h3 className="font-heading text-lg font-semibold mb-4">Contact</h3>
             <div className="space-y-3 text-sm text-cream/70">
               <p>{association.address}</p>
-              <a
-                href={`mailto:${association.email}`}
-                className="block hover:text-corail transition-colors"
-              >
-                {association.email}
-              </a>
             </div>
             <div className="flex items-center gap-4 mt-6">
               <a
@@ -99,14 +92,6 @@ export function Footer() {
           <p className="text-cream/50 text-sm">
             &copy; {new Date().getFullYear()} Puyricard sur un Plateau. Tous droits réservés.
           </p>
-          <a
-            href={socialLinks.helloasso}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-corail hover:text-corail-light transition-colors font-medium"
-          >
-            Nous rejoindre sur HelloAsso
-          </a>
         </div>
       </div>
     </footer>

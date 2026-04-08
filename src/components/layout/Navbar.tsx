@@ -17,15 +17,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center gap-3 shrink-0" onClick={() => setIsOpen(false)}>
-            <Image
-              src="/images/logo.jpeg"
-              alt="Puyricard sur un Plateau"
-              width={48}
-              height={37}
-              className="h-9 md:h-11 w-auto"
-            />
-            <span className="font-heading text-lg md:text-xl font-bold text-encre hidden sm:block">
-              P<span className="text-corail">1</span>P
+            <span className="bg-white rounded-md px-2 py-1 shadow-sm ring-1 ring-black/5">
+              <Image
+                src="/images/logo_p1p.png"
+                alt="Puyricard sur un Plateau"
+                width={120}
+                height={93}
+                className="h-10 md:h-12 w-auto"
+                priority
+              />
             </span>
           </Link>
 

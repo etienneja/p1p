@@ -37,26 +37,16 @@ function TimeBlock({ value, label }: { value: number; label: string }) {
 
 export function CountdownTimer({ targetDate }: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    setTimeLeft(calculateTimeLeft(targetDate));
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft(targetDate));
-    }, 1000);
-    return () => clearInterval(timer);
+    const update = () => setTimeLeft(calculateTimeLeft(targetDate));
+    const initial = setTimeout(update, 0);
+    const timer = setInterval(update, 1000);
+    return () => {
+      clearTimeout(initial);
+      clearInterval(timer);
+    };
   }, [targetDate]);
-
-  if (!mounted) {
-    return (
-      <div className="flex items-center justify-center gap-4 md:gap-6 py-4">
-        {["Jours", "Heures", "Minutes", "Secondes"].map((label) => (
-          <TimeBlock key={label} value={0} label={label} />
-        ))}
-      </div>
-    );
-  }
 
   if (!timeLeft) {
     return (

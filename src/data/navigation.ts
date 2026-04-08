@@ -8,7 +8,7 @@ export const navigation = [
 ];
 
 export const socialLinks = {
-  facebook: "https://www.facebook.com/profile.php?id=61557134498498",
-  instagram: "https://www.instagram.com/puyricard_sur_un_plateau/",
+  facebook: "https://www.facebook.com/PUYRICARD1PLATEAU",
+  instagram: "https://www.instagram.com/puyricard1plateau/",
   helloasso: "https://www.helloasso.com/associations/puyricard-sur-un-plateau",
 };

@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { EventCard } from "@/components/features/EventCard";
 import { CountdownTimer } from "@/components/ui/CountdownTimer";
-import { HelloAssoButton } from "@/components/features/HelloAssoButton";
 import { events, getNextEvent } from "@/data/events";
 
 export function EventsPage() {
@@ -49,9 +48,6 @@ export function EventsPage() {
               {nextEvent.date} — {nextEvent.location}
             </p>
             <CountdownTimer targetDate={nextEvent.dateISO} />
-            <div className="mt-6">
-              <HelloAssoButton url={nextEvent.helloAssoUrl} label="Réserver ma place" />
-            </div>
           </motion.div>
         </div>
       </section>

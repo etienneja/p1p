@@ -3,9 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/Button";
 import { CountdownTimer } from "@/components/ui/CountdownTimer";
-import { HelloAssoButton } from "@/components/features/HelloAssoButton";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { events, type Event } from "@/data/events";
 
@@ -45,12 +43,14 @@ export function EventDetailPage({ event }: { event: Event }) {
                 </svg>
                 {event.date}
               </span>
-              <span className="flex items-center gap-2">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                {event.time}
-              </span>
+              {event.time && (
+                <span className="flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  {event.time}
+                </span>
+              )}
               <span className="flex items-center gap-2">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -67,9 +67,6 @@ export function EventDetailPage({ event }: { event: Event }) {
       <section className="py-10 px-4 bg-sable">
         <div className="max-w-2xl mx-auto text-center">
           <CountdownTimer targetDate={event.dateISO} />
-          <div className="mt-6">
-            <HelloAssoButton url={event.helloAssoUrl} size="lg" />
-          </div>
         </div>
       </section>
 
@@ -98,34 +95,42 @@ export function EventDetailPage({ event }: { event: Event }) {
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-12 text-center">
             Programme
           </h2>
-          <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-sable-dark" />
-            <div className="space-y-8">
-              {event.program.map((item, i) => (
-                <motion.div
-                  key={item.time}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="relative flex gap-6"
-                >
-                  <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0 z-10"
-                    style={{ backgroundColor: event.color }}
-                  >
-                    {item.time}
-                  </div>
-                  <div className="bg-white rounded-xl p-5 flex-1 shadow-sm">
-                    <h3 className="font-heading text-lg font-bold mb-1">{item.title}</h3>
-                    {item.description && (
-                      <p className="text-encre-light text-sm">{item.description}</p>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
+          {event.program.every((item) => !item.time) ? (
+            <div className="bg-white rounded-2xl p-8 shadow-sm text-center">
+              <p className="text-encre-light text-lg">
+                {event.program.map((p) => p.title).join(", ")}
+              </p>
             </div>
-          </div>
+          ) : (
+            <div className="relative">
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-sable-dark" />
+              <div className="space-y-8">
+                {event.program.map((item, i) => (
+                  <motion.div
+                    key={`${i}-${item.title}`}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    className="relative flex gap-6"
+                  >
+                    <div
+                      className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0 z-10"
+                      style={{ backgroundColor: event.color }}
+                    >
+                      {item.time}
+                    </div>
+                    <div className="bg-white rounded-xl p-5 flex-1 shadow-sm">
+                      <h3 className="font-heading text-lg font-bold mb-1">{item.title}</h3>
+                      {item.description && (
+                        <p className="text-encre-light text-sm">{item.description}</p>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -161,35 +166,7 @@ export function EventDetailPage({ event }: { event: Event }) {
         </div>
       </section>
 
-      {/* Photos from previous editions */}
-      {event.images.length > 0 && (
-        <section className="py-16 md:py-20 px-4 bg-sable">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-10 text-center">
-              En images
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {event.images.map((src, i) => (
-                <motion.div
-                  key={src}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="relative aspect-[4/3] rounded-xl overflow-hidden group"
-                >
-                  <Image
-                    src={src}
-                    alt={`${event.title} - Photo ${i + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Photos section intentionally hidden (content pending) */}
 
       {/* Other events */}
       <section className="py-16 md:py-20 px-4">
@@ -237,30 +214,6 @@ export function EventDetailPage({ event }: { event: Event }) {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative py-16 md:py-20 px-4 text-white overflow-hidden">
-        <Image
-          src={event.bannerImage}
-          alt=""
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
-        <div className="relative max-w-3xl mx-auto text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
-            On vous attend !
-          </h2>
-          <p className="text-lg text-white/90 mb-8">
-            Réservez votre place dès maintenant pour ne rien manquer.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <HelloAssoButton url={event.helloAssoUrl} size="lg" />
-            <Button href="/contact" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:border-white/50">
-              Nous contacter
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

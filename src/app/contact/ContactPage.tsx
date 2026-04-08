@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { association } from "@/data/association";
 import { socialLinks } from "@/data/navigation";
 
@@ -22,7 +20,7 @@ export function ContactPage() {
               Contact
             </h1>
             <p className="text-xl md:text-2xl text-encre-light leading-relaxed">
-              Une question ? Envie de nous rejoindre ? Contactez-nous !
+              Une question ? Contactez-nous !
             </p>
           </motion.div>
         </div>
@@ -98,40 +96,6 @@ export function ContactPage() {
               </div>
             </div>
           </Card>
-        </div>
-      </section>
-
-      {/* HelloAsso */}
-      <section className="py-16 md:py-20 px-4 bg-sable">
-        <div className="max-w-3xl mx-auto text-center">
-          <SectionTitle
-            title="Adhérer à l'association"
-            subtitle="Rejoignez Puyricard sur un Plateau et participez à la vie du village"
-          />
-          <div className="mt-10">
-            <Button href={socialLinks.helloasso} size="lg" external>
-              Adhérer sur HelloAsso
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Map */}
-      <section className="py-16 md:py-20 px-4">
-        <div className="max-w-5xl mx-auto">
-          <SectionTitle title="Nous trouver" />
-          <div className="mt-12 rounded-2xl overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11579.87!2d5.3951!3d43.5751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c98c5fd0f645c5%3A0x409ce34b30423b0!2s13540+Puyricard!5e0!3m2!1sfr!2sfr"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Carte de Puyricard"
-            />
-          </div>
         </div>
       </section>
     </div>

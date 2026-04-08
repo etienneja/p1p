@@ -3,7 +3,6 @@
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { CountdownTimer } from "@/components/ui/CountdownTimer";
 import { EventCard } from "@/components/features/EventCard";
-import { HelloAssoButton } from "@/components/features/HelloAssoButton";
 import { events, getNextEvent } from "@/data/events";
 
 export function EventsPreview() {
@@ -25,9 +24,6 @@ export function EventsPreview() {
           <h3 className="font-heading text-2xl md:text-3xl font-bold mb-2">{nextEvent.title}</h3>
           <p className="text-encre-light mb-6">{nextEvent.date} — {nextEvent.location}</p>
           <CountdownTimer targetDate={nextEvent.dateISO} />
-          <div className="mt-6">
-            <HelloAssoButton url={nextEvent.helloAssoUrl} label="Réserver ma place" />
-          </div>
         </div>
 
         {/* Event cards */}
