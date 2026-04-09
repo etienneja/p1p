@@ -2,6 +2,7 @@ export const navigation = [
   { name: "Accueil", href: "/" },
   { name: "Le Village", href: "/le-village" },
   { name: "L'Association", href: "/association" },
+  { name: "Partenaires", href: "/partenaires" },
   { name: "Événements", href: "/evenements" },
   { name: "Galerie", href: "/galerie" },
   { name: "Contact", href: "/contact" },

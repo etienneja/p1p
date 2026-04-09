@@ -12,7 +12,7 @@ export const village = {
     {
       title: "Un village vivant",
       content:
-        "Puyricard, c'est avant tout une communauté. Ses commerces de proximité — boulangerie, épicerie, restaurants — animent le quotidien du village. La place de l'église, cœur battant du plateau, accueille marchés et festivités tout au long de l'année.",
+        "Puyricard, c'est avant tout une communauté. Ses commerces de proximité — boulangerie, épicerie, boucherie, restaurants — animent le quotidien du village. La place de l'église, cœur battant du plateau, accueille marchés et festivités tout au long de l'année.",
     },
     {
       title: "Entre tradition et modernité",

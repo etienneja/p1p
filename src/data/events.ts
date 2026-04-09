@@ -44,6 +44,8 @@ export const events: Event[] = [
     practicalInfo: [
       "Entrée libre",
       "Parking disponible à proximité",
+      "Horaires : à partir de 18h",
+      "Lieu : Place de la Rostolane, Puyricard",
     ],
     helloAssoUrl: "https://www.helloasso.com/associations/puyricard-sur-un-plateau",
     icon: "church",
@@ -58,23 +60,24 @@ export const events: Event[] = [
     date: "24 mai 2026",
     dateISO: "2026-05-24T19:00:00",
     time: "",
-    location: "Plateau de Puyricard",
+    location: "La Providence - 65 avenue Jacques de Régis",
     description:
-      "Installez-vous confortablement sous le ciel étoilé de Puyricard pour une projection en plein air précédée d'un apéritif convivial et d'un dîner sous les platanes.",
+      "Installez-vous confortablement sous le ciel étoilé pour une soirée cinéma en plein air, avec bar, food truck et projection du film.",
     longDescription:
-      "Le cinéma en plein air est un moment unique de partage. Dès 19h, profitez d'un apéritif offert par nos partenaires locaux, suivi d'un dîner champêtre préparé avec des produits du plateau. À la tombée de la nuit, installez-vous pour la projection d'un film sélectionné avec soin. Transats, plaids et pop-corn seront de la partie pour une soirée inoubliable.",
+      "Le cinéma en plein air est un moment unique de partage. Cette année, nous projetons Les Choristes. Retrouvez un bar et un food truck sur place, puis installez-vous pour la projection du film sous les étoiles.",
     program: [
       { time: "", title: "Bar" },
       { time: "", title: "Food truck" },
       { time: "", title: "Projection du film" },
     ],
     practicalInfo: [
-      "Places limitées — réservation obligatoire",
+      "Horaires : 20h",
+      "Lieu : La Providence - 65 avenue Jacques de Régis",
     ],
     helloAssoUrl: "https://www.helloasso.com/associations/puyricard-sur-un-plateau",
     icon: "film",
     color: "#4BA3C3",
-    bannerImage: "/images/soiree_fete_village2.jpg",
+    bannerImage: "/images/les_choristes_affiche.png",
     images: [],
   },
   {
@@ -88,12 +91,14 @@ export const events: Event[] = [
     description:
       "La Fête du Village est le point d'orgue de la saison estivale. Sur la place de l'église, partagez un grand dîner festif suivi d'une soirée musicale et dansante.",
     longDescription:
-      "La Fête du Village rassemble tous les Puyricardais et leurs amis pour une soirée mémorable. La place de l'église se transforme en un grand restaurant à ciel ouvert où l'on dîne tous ensemble. Les commerçants et producteurs du plateau proposent leurs spécialités, et la soirée se prolonge en musique et en danse. Un moment fort de cohésion et de joie de vivre à la provençale.",
+      "La Fête du Village rassemble tous les Puyricardens et leurs amis pour une soirée mémorable. La place de l'église se transforme en un grand restaurant à ciel ouvert où l'on dîne tous ensemble. Les commerçants et producteurs du plateau proposent leurs spécialités, et la soirée se prolonge dans une ambiance festive. Un moment fort de cohésion et de joie de vivre à la provençale.",
     program: [
       { time: "18h00", title: "Installation et apéritif", description: "Retrouvailles et premières dégustations — animations pour enfants" },
-      { time: "19h30", title: "Grand dîner sur la place", description: "Menu festif avec les produits du plateau" },
-      { time: "21h30", title: "Concert live", description: "Musique festive et entraînante" },
-      { time: "23h00", title: "Soirée dansante", description: "On danse sous les lampions jusqu'au bout de la nuit" },
+      { time: "20h00", title: "Dîner sur la place", description: "Menu festif avec les produits du plateau" },
+      { time: "", title: "Guignol" },
+      { time: "", title: "Cirque" },
+      { time: "", title: "Maquilleuse" },
+      { time: "", title: "Terrain de foot pour les enfants" },
     ],
     practicalInfo: [
       "Réservation obligatoire pour le dîner",

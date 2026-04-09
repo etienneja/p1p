@@ -5,12 +5,18 @@ export interface Partner {
 }
 
 export const partners: Partner[] = [
-  { name: "Boulangerie du Plateau", activity: "Boulangerie-Pâtisserie", description: "Pains et viennoiseries artisanales" },
-  { name: "Domaine de Puyricard", activity: "Viticulteur", description: "Vins AOP Coteaux d'Aix-en-Provence" },
-  { name: "L'Épicerie du Village", activity: "Épicerie fine", description: "Produits locaux et de saison" },
-  { name: "Le Bistrot du Plateau", activity: "Restaurant", description: "Cuisine provençale traditionnelle" },
-  { name: "Chocolaterie de Puyricard", activity: "Chocolatier", description: "Chocolats artisanaux depuis 1967" },
-  { name: "Moulin à Huile", activity: "Producteur d'huile d'olive", description: "Huile d'olive du plateau" },
-  { name: "Les Jardins du Plateau", activity: "Maraîcher bio", description: "Fruits et légumes de saison" },
-  { name: "Cave du Plateau", activity: "Caviste", description: "Sélection de vins provençaux" },
+  { name: "Cora & Dam", activity: "Restauration" },
+  { name: "Boulangerie Émile Bec", activity: "Boulangerie" },
+  { name: "Chocolaterie de Puyricard", activity: "Chocolatier" },
+  { name: "Marcelino (ex Coco Bello)", activity: "Restauration" },
+  { name: "Empanadas food truck", activity: "Food truck" },
+  { name: "Amista d’Aqui", activity: "Restauration" },
+  { name: "Food Truck (crêpes)", activity: "Food truck" },
+  { name: "Boucherie Bourgue", activity: "Boucherie" },
+  { name: "Groupe de musique : 90’s kids", activity: "Musique" },
+  { name: "Boucherie Pâturage", activity: "Boucherie" },
+  { name: "Chateau du Seuil", activity: "Vins" },
+  { name: "Bulles de Provence", activity: "Bières" },
+  { name: "U Utile", activity: "Supermarché" },
+  { name: "Boulangerie Lavarenne", activity: "Boulangerie" },
 ];
