@@ -47,6 +47,24 @@ body {
   overflow-x: hidden;
 }
 
+@keyframes partnersMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.partners-marquee {
+  animation: partnersMarquee 28s linear infinite;
+  will-change: transform;
+}
+
+.partners-marquee:hover {
+  animation-play-state: paused;
+}
+
 ::selection {
   background-color: var(--color-soleil-light);
   color: var(--color-encre);

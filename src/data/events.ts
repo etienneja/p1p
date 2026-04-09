@@ -59,19 +59,19 @@ export const events: Event[] = [
     subtitle: "Une soirée magique sous les étoiles provençales",
     date: "24 mai 2026",
     dateISO: "2026-05-24T19:00:00",
-    time: "",
+    time: "Début à 18h30",
     location: "La Providence - 65 avenue Jacques de Régis",
     description:
-      "Installez-vous confortablement sous le ciel étoilé pour une soirée cinéma en plein air, avec bar, food truck et projection du film.",
+      "Installez-vous confortablement sous le ciel étoilé pour une soirée cinéma en plein air, avec bar, 2 food-trucks et projection du film.",
     longDescription:
-      "Le cinéma en plein air est un moment unique de partage. Cette année, nous projetons Les Choristes. Retrouvez un bar et un food truck sur place, puis installez-vous pour la projection du film sous les étoiles.",
+      "Le cinéma en plein air est un moment unique de partage. Cette année, nous projetons Les Choristes. Retrouvez un bar et 2 food-trucks sur place, puis installez-vous pour la projection du film sous les étoiles.",
     program: [
       { time: "", title: "Bar" },
-      { time: "", title: "Food truck" },
+      { time: "", title: "2 food-trucks" },
       { time: "", title: "Projection du film" },
     ],
     practicalInfo: [
-      "Horaires : 20h",
+      "Horaires : 18h30",
       "Lieu : La Providence - 65 avenue Jacques de Régis",
     ],
     helloAssoUrl: "https://www.helloasso.com/associations/puyricard-sur-un-plateau",

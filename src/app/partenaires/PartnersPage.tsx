@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { partners } from "@/data/partners";
@@ -24,6 +25,16 @@ export function PartnersPage() {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
               >
+                {partner.logoSrc && (
+                  <div className="h-14 flex items-center mb-4">
+                    <img
+                      src={partner.logoSrc}
+                      alt={`Logo ${partner.name}`}
+                      className="max-h-14 w-auto object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
                 <h3 className="font-heading text-lg font-bold mb-1">{partner.name}</h3>
                 <p className="text-sm text-corail font-medium mb-2">{partner.activity}</p>
                 {partner.description && (
