@@ -32,5 +32,5 @@ export const association = {
     },
   ],
   email: "contact@puyricardsurunplateau.org",
-  address: "av de la Touloubre, 13540 Puyricard",
+  address: "Imp. de l'Eperon, 13540 Puyricard",
 };
