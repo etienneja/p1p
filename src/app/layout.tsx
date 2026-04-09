@@ -23,6 +23,10 @@ export const metadata: Metadata = {
     default: "Puyricard sur un Plateau — Association",
     template: "%s | Puyricard sur un Plateau",
   },
+  icons: {
+    icon: [{ url: "/images/logo_p1p.png" }],
+    apple: [{ url: "/images/logo_p1p.png" }],
+  },
   description:
     "Association Puyricard sur un Plateau : événements conviviaux, promotion des produits locaux et lien social au cœur du village de Puyricard, près d'Aix-en-Provence.",
   keywords: [
