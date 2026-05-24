@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CountdownTimer } from "@/components/ui/CountdownTimer";
+import { EventReservationCta } from "@/components/features/EventReservationCta";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { events, type Event } from "@/data/events";
 
@@ -59,6 +60,12 @@ export function EventDetailPage({ event }: { event: Event }) {
                 {event.location}
               </span>
             </div>
+            {event.reservation && (
+              <EventReservationCta
+                reservation={event.reservation}
+                theme="dark"
+              />
+            )}
           </motion.div>
         </div>
       </section>
