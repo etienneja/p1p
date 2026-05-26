@@ -49,7 +49,14 @@ export function EventReservationCta({
         </span>
       )}
       {!isOpen && (
-        <p className={cn("text-sm font-medium", isDark ? "text-white/80" : "text-encre-light")}>
+        <p
+          className={cn(
+            "text-center text-lg md:text-xl font-bold leading-snug max-w-md",
+            isDark
+              ? "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+              : "text-encre"
+          )}
+        >
           {reservation.openingNotice}
         </p>
       )}
