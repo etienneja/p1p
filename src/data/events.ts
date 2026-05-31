@@ -118,8 +118,8 @@ export const events: Event[] = [
     reservation: {
       ctaLabel: "RÉSERVER VOS PLACES",
       ctaUrl: "https://www.helloasso.com/associations/puyricard-sur-un-plateau",
-      salesOpenISO: "2026-05-30T00:00:00+02:00",
-      openingNotice: "La billetterie ouvrira le 30 mai 2026 à minuit",
+      salesOpenISO: "2026-05-31T18:00:00+02:00",
+      openingNotice: "La billetterie ouvrira le 31 mai 2026 à 18h",
     },
     icon: "music",
     color: "#F2C14E",
