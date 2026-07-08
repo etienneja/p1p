@@ -47,10 +47,7 @@ export function EventsPage() {
             <p className="text-encre-light mb-6">
               {nextEvent.date} — {nextEvent.location}
             </p>
-            <CountdownTimer
-              targetDate={nextEvent.dateISO}
-              endedMessage="Rendez-vous l'année prochaine"
-            />
+            <CountdownTimer targetDate={nextEvent.dateISO} />
           </motion.div>
         </div>
       </section>

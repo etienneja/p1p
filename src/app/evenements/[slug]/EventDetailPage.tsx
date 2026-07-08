@@ -66,10 +66,7 @@ export function EventDetailPage({ event }: { event: Event }) {
       {/* Countdown */}
       <section className="py-10 px-4 bg-sable">
         <div className="max-w-2xl mx-auto text-center">
-          <CountdownTimer
-            targetDate={event.dateISO}
-            endedMessage="Rendez-vous l'année prochaine"
-          />
+          <CountdownTimer targetDate={event.dateISO} />
         </div>
       </section>
 

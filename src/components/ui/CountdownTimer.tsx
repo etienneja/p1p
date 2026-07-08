@@ -38,7 +38,7 @@ function TimeBlock({ value, label }: { value: number; label: string }) {
 
 export function CountdownTimer({
   targetDate,
-  endedMessage = "L'événement a commencé !",
+  endedMessage = "Rendez-vous l'année prochaine",
 }: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
 
