@@ -4,13 +4,6 @@ export interface EventProgram {
   description?: string;
 }
 
-export interface EventReservation {
-  ctaLabel: string;
-  ctaUrl: string;
-  salesOpenISO: string;
-  openingNotice: string;
-}
-
 export interface Event {
   slug: string;
   title: string;
@@ -24,7 +17,6 @@ export interface Event {
   program: EventProgram[];
   practicalInfo: string[];
   helloAssoUrl: string;
-  reservation?: EventReservation;
   icon: "church" | "film" | "music";
   color: string;
   bannerImage: string;
@@ -115,12 +107,6 @@ export const events: Event[] = [
       "Tenue estivale de rigueur !",
     ],
     helloAssoUrl: "https://www.helloasso.com/associations/puyricard-sur-un-plateau",
-    reservation: {
-      ctaLabel: "RÉSERVER VOS PLACES",
-      ctaUrl: "https://www.helloasso.com/associations/puyricard-sur-un-plateau",
-      salesOpenISO: "2026-06-07T18:00:00+02:00",
-      openingNotice: "La billetterie ouvrira le 7 juin 2026 à 18h",
-    },
     icon: "music",
     color: "#F2C14E",
     bannerImage: "/images/diner_fete_village.jpg",

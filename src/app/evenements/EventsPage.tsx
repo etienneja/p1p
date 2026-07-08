@@ -2,13 +2,11 @@
 
 import { motion } from "framer-motion";
 import { EventCard } from "@/components/features/EventCard";
-import { EventReservationCta } from "@/components/features/EventReservationCta";
 import { CountdownTimer } from "@/components/ui/CountdownTimer";
 import { events, getNextEvent } from "@/data/events";
 
 export function EventsPage() {
   const nextEvent = getNextEvent();
-  const villageEvent = events.find((e) => e.slug === "fete-du-village");
 
   return (
     <div className="pt-20 md:pt-24">
@@ -49,10 +47,10 @@ export function EventsPage() {
             <p className="text-encre-light mb-6">
               {nextEvent.date} — {nextEvent.location}
             </p>
-            {villageEvent?.reservation && (
-              <EventReservationCta reservation={villageEvent.reservation} />
-            )}
-            <CountdownTimer targetDate={nextEvent.dateISO} />
+            <CountdownTimer
+              targetDate={nextEvent.dateISO}
+              endedMessage="Rendez-vous l'année prochaine"
+            />
           </motion.div>
         </div>
       </section>

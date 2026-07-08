@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 interface CountdownTimerProps {
   targetDate: string;
+  endedMessage?: string;
 }
 
 interface TimeLeft {
@@ -35,7 +36,10 @@ function TimeBlock({ value, label }: { value: number; label: string }) {
   );
 }
 
-export function CountdownTimer({ targetDate }: CountdownTimerProps) {
+export function CountdownTimer({
+  targetDate,
+  endedMessage = "L'événement a commencé !",
+}: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
 
   useEffect(() => {
@@ -51,7 +55,7 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
   if (!timeLeft) {
     return (
       <p className="text-center text-lg font-semibold text-soleil py-4">
-        L&apos;événement a commencé !
+        {endedMessage}
       </p>
     );
   }

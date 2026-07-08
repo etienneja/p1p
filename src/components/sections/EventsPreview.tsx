@@ -3,12 +3,10 @@
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { CountdownTimer } from "@/components/ui/CountdownTimer";
 import { EventCard } from "@/components/features/EventCard";
-import { EventReservationCta } from "@/components/features/EventReservationCta";
 import { events, getNextEvent } from "@/data/events";
 
 export function EventsPreview() {
   const nextEvent = getNextEvent();
-  const villageEvent = events.find((e) => e.slug === "fete-du-village");
 
   return (
     <section className="py-20 md:py-28 px-4 bg-sable">
@@ -26,11 +24,6 @@ export function EventsPreview() {
           <h3 className="font-heading text-2xl md:text-3xl font-bold mb-2">{nextEvent.title}</h3>
           <p className="text-encre-light mb-6">{nextEvent.date} — {nextEvent.location}</p>
           <CountdownTimer targetDate={nextEvent.dateISO} />
-          {villageEvent?.reservation && (
-            <EventReservationCta
-              reservation={villageEvent.reservation}
-            />
-          )}
         </div>
 
         {/* Event cards */}

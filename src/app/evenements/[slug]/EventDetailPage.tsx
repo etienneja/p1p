@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CountdownTimer } from "@/components/ui/CountdownTimer";
-import { EventReservationCta } from "@/components/features/EventReservationCta";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { events, type Event } from "@/data/events";
 
@@ -60,12 +59,6 @@ export function EventDetailPage({ event }: { event: Event }) {
                 {event.location}
               </span>
             </div>
-            {event.reservation && (
-              <EventReservationCta
-                reservation={event.reservation}
-                theme="dark"
-              />
-            )}
           </motion.div>
         </div>
       </section>
@@ -73,7 +66,10 @@ export function EventDetailPage({ event }: { event: Event }) {
       {/* Countdown */}
       <section className="py-10 px-4 bg-sable">
         <div className="max-w-2xl mx-auto text-center">
-          <CountdownTimer targetDate={event.dateISO} />
+          <CountdownTimer
+            targetDate={event.dateISO}
+            endedMessage="Rendez-vous l'année prochaine"
+          />
         </div>
       </section>
 
